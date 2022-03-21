@@ -11,11 +11,25 @@ class Mahasiswa(BaseModel):
     npm: str
     alamat: str
 
-db = {}
+db = {
+    "123" : {
+        "nama": "sae lagi",
+        "npm": "123",
+        "alamat": "walet jaya"
+    }
+}
 
 @app.get("/mahasiswa/{npm}")
 def get_mahasiswa(npm: str):
     return db[npm]
+
+# This function is made inefficient on purpose
+@app.get("/mahasiswa/2/{npm}")
+def get_mahasiswa(npm: str):
+    for npmDB in db:
+        if npm == npmDB:
+            mahasiswa = db[npm]
+    return mahasiswa
 
 @app.post("/mahasiswa")
 def post_mahasiswa(mahasiswa: Mahasiswa):
