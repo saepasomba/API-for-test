@@ -21,6 +21,7 @@ docs.zip
 archive.zip
 .DS_Store
 files
+Locust
 
 # vim temporary files
 *~

@@ -12,11 +12,6 @@ class Mahasiswa(BaseModel):
     alamat: str
 
 db = {
-    "123" : {
-        "nama": "sae lagi",
-        "npm": "123",
-        "alamat": "walet jaya"
-    }
 }
 
 @app.get("/mahasiswa/{npm}")
